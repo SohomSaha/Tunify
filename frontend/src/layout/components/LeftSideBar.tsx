@@ -9,13 +9,13 @@ import { useMusicStore } from "@/stores/useMusicStore.ts";
 import { useEffect } from "react";
 
 function LeftSideBar() {
-  const { songs, albums, fetchAlbums, isLoading } = useMusicStore();
+  const {  albums, fetchAlbums, isLoading } = useMusicStore();
 
   useEffect(() => {
     fetchAlbums();
   }, [fetchAlbums]);
   return (
-    <div className="h-full flex flex-col gap-2">
+    <div className="h-full flex flex-col gap-2 ">
       {/*Navigation Menu */}
 
       <div className="rounded-lg bg-zinc-900 p-4">

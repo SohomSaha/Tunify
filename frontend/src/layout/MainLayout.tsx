@@ -1,15 +1,31 @@
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { Outlet } from "react-router-dom";
 import LeftSideBar from "./components/LeftSideBar";
-import RightSideBar from "./components/RightSideBar";
+import FriendsActivity from "./components/FriendsActivity";
+import AudioPlayer from "./components/AudioPlayer";
+import PlaybackControls from "./components/PlaybackControls";
+import { useEffect, useState } from "react";
 
 function MainLayout() {
-  const isMobile = false;
+  const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const checkMobile = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+
+		checkMobile();
+		window.addEventListener("resize", checkMobile);
+		return () => window.removeEventListener("resize", checkMobile);
+	}, []);
+
+
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="h-screen bg-black text-white flex flex-col mt-2 p-2">
       <ResizablePanelGroup direction="horizontal" className="flex-1 flex h-full overflow-hidden">
+        <AudioPlayer />
         <ResizablePanel defaultSize={20} minSize={isMobile ? 0 : 10} maxSize={30}>
-          <div className="bg-gray-800 p-4 min-h-screen ">
+          <div className="bg-gray-800 p-4 min-h-screen rounded-md">
             <LeftSideBar />
             </div> 
         </ResizablePanel>
@@ -17,13 +33,18 @@ function MainLayout() {
         <ResizablePanel defaultSize={isMobile?80:60}>
         <Outlet />
         </ResizablePanel>
-        <ResizableHandle className="w-2 bg-black rounded-lg transition-colors"/>
-        <ResizablePanel defaultSize={20} minSize={0} maxSize={25} collapsedSize={0}>
-          <div className="bg-gray-800 p-4">
-            <RightSideBar/>
-          </div>
-        </ResizablePanel>
-        </ResizablePanelGroup>
+        {!isMobile && (
+					<>
+						<ResizableHandle className='w-2 bg-black rounded-lg transition-colors' />
+
+						{/* right sidebar */}
+						<ResizablePanel defaultSize={20} minSize={0} maxSize={25} collapsedSize={0}>
+							<FriendsActivity />
+						</ResizablePanel>
+					</>
+				)}
+			</ResizablePanelGroup>
+        <PlaybackControls />
     </div>
   );
 }
