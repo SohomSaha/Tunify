@@ -32,7 +32,7 @@ function HomePage() {
   return (
     <main className="min-h-screen rounded-md overflow-hidden bg-gradient-to-b from-zinc-800 to-zinc-900">
       <TopBar />
-      <ScrollArea className="h-[calc(100vh-120px)]">
+      <ScrollArea className="h-[calc(100vh-180px)]">
         <div className="p-4 sm:p-6">
           <h1 className="sm:text-3xl text-2xl font-bold mb-6">
             Good afternoon
