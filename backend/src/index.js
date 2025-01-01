@@ -45,6 +45,11 @@ app.use(fileUpload({
     limits: { fileSize: 10 * 1024 * 1024 },
 }))
 
+app.get('/health', (req, res) => {
+    const {fullName}=req.body;
+    res.status(200).send('Works'); 
+  });
+
 app.use("/api/users",userRoutes)
 app.use("/api/auth",authRoutes)
 app.use("/api/admin",adminRoutes)
