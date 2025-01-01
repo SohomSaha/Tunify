@@ -29,7 +29,7 @@ initializeSocket(httpServer);
 
 app.use(cors(
     {
-        origin: "http://localhost:5173",
+        origin: "https://tunify-123.vercel.app",
         credentials: true
     }
 ));
