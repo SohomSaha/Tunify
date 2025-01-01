@@ -10,7 +10,6 @@ import SignInOAuthButtons from "./SignInOAuthButtons";
 import { useAuthStore } from "@/stores/useAuthStore";
 export const TopBar = () => {
   const { isAdmin } = useAuthStore();
-  console.log(isAdmin);
   return (
     <div className="flex justify-between items-center p-4 sticky top-0 bg-zinc-900/75 backdrop-blur-md z-10 rounded-md">
       <div className="flex gap-2 items-center">

@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import LeftSideBar from "./components/LeftSideBar";
 import FriendsActivity from "./components/FriendsActivity";
 import AudioPlayer from "./components/AudioPlayer";
-import PlaybackControls from "./components/PlaybackControls";
+import {PlaybackControls} from "./components/PlaybackControls";
 import { useEffect, useState } from "react";
 
 function MainLayout() {

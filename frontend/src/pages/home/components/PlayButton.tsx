@@ -8,12 +8,10 @@ const PlayButton = ({ song }: { song: Song }) => {
 	const isCurrentSong = currentSong?._id === song._id;
 
 	const handlePlay = () => {
-        console.log(isCurrentSong)
 		if (isCurrentSong) togglePlay();
 		else{ 
             setCurrentSong(song);
         }
-        console.log(currentSong)
 	};
 
 	return (
