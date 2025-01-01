@@ -21,7 +21,7 @@ interface ChatStore {
 	setSelectedUser: (user: User | null) => void;
 }
 
-const baseURL = import.meta.env.MODE === "development" ? "http://localhost:5000" : "/";
+const baseURL = "https://tunify-u45h.onrender.com";
 const socket = io(baseURL, {
 	autoConnect: false, // only connect if user is authenticated
 	withCredentials: true,
