@@ -29,7 +29,7 @@ export const TopBar = () => {
         )}
 
         <SignedIn>
-          <SignOutButton className="px-4 py-2 bg-zinc-800 text-white rounded-md hover:bg-emerald-600" />
+          <SignOutButton/>
         </SignedIn>
 
         <SignedOut>
