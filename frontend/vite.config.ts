@@ -14,4 +14,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  server: {
+    proxy: {
+      '/auth/callback': 'https://tunify-u45h.onrender.com' // Adjust to your backend URL
+    }
+  },
 });
