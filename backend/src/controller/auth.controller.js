@@ -3,7 +3,7 @@ import { User } from "../models/user.model.js";
 export const callback = async (req, res,next) => {
   try {
     const { id, firstName, lastName, imageUrl } = req.body;
-    const user = await User.findOne({ clarkId: id });
+    const user = await User.findOne({ clerkId: id });
     if (!user) {
       //signup
       await User.create({
