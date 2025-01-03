@@ -14,7 +14,7 @@
 - **Trending & Featured** – Stay updated with the latest trending songs and featured albums.  
 - **Albums & Playlists** – Explore a vast collection of albums and create or follow playlists.  
 
-  🔐 **Authentication**  
+ ### 🔐 **Authentication**  
 - **OAuth Integration** – Secure and seamless login with OAuth for easy access.  
 
 ### 🟢 **Real-time User Activity**  
